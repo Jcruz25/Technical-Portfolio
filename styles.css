@@ -1041,3 +1041,54 @@ body {
     color: #ffffff; /* Hace que el texto pase a un blanco brillante */
     text-shadow: 0 0 8px rgba(74, 246, 38, 0.8); /* Le añade el resplandor verde neón */
 }
+
+/* ==========================================================================
+   CORRECCIONES RESPONSIVAS PARA MÓVILES (Max-width: 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* Evita desbordamientos horizontales generales */
+    body {
+        overflow-x: hidden;
+        padding: 10px;
+    }
+
+    /* Ajustar contenedores principales y secciones */
+    section, .container, header {
+        width: 100% !important;
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Convertir distribuciones de varias columnas en una sola columna */
+    .skills-grid, 
+    .projects-grid, 
+    .certifications-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Forzar que las tarjetas y elementos adapten su ancho al 100% */
+    .project-card, 
+    .skill-card, 
+    .cert-card {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+
+    /* Reducir tamaño de fuentes muy grandes en títulos para que no se corten */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Ajustar terminales o bloques de código para scroll horizontal interno si es necesario */
+    pre, code {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+}
