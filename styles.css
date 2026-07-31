@@ -1,0 +1,1043 @@
+/* ==========================================================================
+ * VARIABLES GLOBALES Y CONFIGURACIÓN BASE
+ * ==========================================================================
+ */
+:root {
+    --bg-primary: #0a0f1d;       /* Fondo oscuro profundo */
+    --bg-secondary: #111827;     /* Fondo secundario para tarjetas y bloques */
+    --terminal-green: #4af626;   /* Verde neón consola */
+    --steel-gray: #8892b0;       /* Gris acero para textos intermedios */
+    --text-main: #e6edf3;        /* Blanco suave principal */
+    --text-muted: #8b949e;       /* Gris apagado */
+    --accent-blue: #00d2ff;      /* Azul ciberseguridad para elementos de interfaz */
+    --border-color: #1f2937;     /* Borde estándar de tarjeta */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Tipografía tipo terminal por defecto */
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Rejilla Estilo Cyberpunk / Consola */
+.grid-bg {
+    background-image: linear-gradient(rgba(74, 246, 38, 0.015) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(74, 246, 38, 0.015) 1px, transparent 1px);
+    background-size: 35px 35px;
+}
+
+/* ==========================================================================
+ * BARRA DE NAVEGACIÓN SUPERIOR (.navbar)
+ * ==========================================================================
+ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 15, 29, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(74, 246, 38, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: var(--terminal-green);
+    font-size: 1.4rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--terminal-green);
+}
+
+/* ==========================================================================
+ * 1. SECCIÓN HERO (CENTRADO ABSOLUTO Y COMPONENTES CORREGIDOS)
+ * ==========================================================================
+ */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #111e38 0%, var(--bg-primary) 70%);
+    padding: 20px;
+    padding-top: 80px;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra los elementos horizontalmente */
+    text-align: center;     /* Centra las líneas de texto */
+}
+
+.console-title {
+    color: var(--terminal-green);
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    min-height: 4rem;       /* Evita saltos bruscos si usas efecto typewriter */
+}
+
+/* Cursor interactivo simulado */
+#typewriter::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero-subtitle {
+    color: var(--steel-gray);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* Contenedor de Botones Principales */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 25px;    /* Espacio controlado para separar los enlaces de abajo */
+}
+
+/* Estilos base para los botones tipo consola */
+.btn-terminal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 28px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    height: 48px;
+}
+
+.btn-primary {
+    border: 2px solid var(--terminal-green);
+    color: var(--terminal-green);
+    background-color: rgba(74, 246, 38, 0.03);
+}
+
+.btn-primary:hover {
+    background-color: var(--terminal-green);
+    color: var(--bg-primary);
+    box-shadow: 0 0 15px rgba(74, 246, 38, 0.4);
+}
+
+.btn-secondary {
+    border: 2px solid var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-blue);
+    color: var(--bg-primary);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+/* Contenedor corregido para enlaces de redes sociales */
+.hero-socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* Enlaces de redes sociales con contraste y diseño de consola */
+.social-link {
+    color: var(--steel-gray); /* Color gris acero de alta legibilidad sobre fondo oscuro */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Brillo interactivo en hover */
+.social-link:hover {
+    color: var(--accent-blue); /* Cambia al azul ciberseguridad */
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+ * CONTENEDORES GENERALES DE SECCIONES
+ * ==========================================================================
+ */
+.section-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: '>';
+    color: var(--terminal-green);
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+ * 2. SECCIÓN HABILIDADES Y CERTIFICACIONES (DISEÑO TRIDIMENSIONAL DE VOLTEO)
+ * ==========================================================================
+ */
+.skills-section {
+    background-color: rgba(17, 24, 39, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Cabecera del contenedor simulando ventana del sistema */
+.terminal-header {
+    background-color: #161b22;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-circle {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-circle.red    { background-color: #ff5f56; }
+.terminal-circle.yellow { background-color: #ffbd2e; }
+.terminal-circle.green  { background-color: #27c93f; }
+
+.terminal-title {
+    color: var(--steel-gray);
+    font-size: 0.85rem;
+    margin-left: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Rejilla interna de capacidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 25px;
+}
+
+/* Cambiado a perspectiva para habilitar la visualización 3D */
+.skill-card {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    border-radius: 4px;
+    height: 380px; /* Altura fija para garantizar la simetría durante el volteo */
+    perspective: 1000px;
+}
+
+/* Contenedor interno que rota sobre el eje Y */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Acción de volteo al hacer Hover o foco interno */
+.skill-card:hover .card-inner,
+.skill-card:focus-within .card-inner {
+    transform: rotateY(180deg) !important;
+}
+
+/* Propiedades comunes para ambas caras (frontal y trasera) */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    border-radius: 4px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #0d1117;
+    border: 1px solid var(--border-color);
+}
+
+/* Bordes superiores decorativos específicos de la cara frontal */
+.card-front.cyber   { border-top: 2px solid var(--terminal-green); }
+.card-front.dev     { border-top: 2px solid var(--accent-blue); }
+.card-front.systems { border-top: 2px solid var(--steel-gray); }
+
+/* Bordes completos iluminados en hover aplicados a la cara trasera */
+.card-inner:hover .cyber-border   { border-color: var(--terminal-green); box-shadow: 0 0 15px rgba(74, 246, 38, 0.15); }
+.card-inner:hover .dev-border     { border-color: var(--accent-blue); box-shadow: 0 0 15px rgba(0, 210, 255, 0.15); }
+.card-inner:hover .systems-border { border-color: var(--text-main); box-shadow: 0 0 15px rgba(230, 237, 243, 0.15); }
+
+/* Cara trasera rotada inicialmente 180 grados */
+.card-back {
+    transform: rotateY(180deg);
+    justify-content: center;
+    gap: 20px;
+    z-index: 2;
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.card-front.cyber .card-icon   { color: var(--terminal-green); }
+.card-front.dev .card-icon     { color: var(--accent-blue); }
+.card-front.systems .card-icon { color: var(--text-main); }
+
+.card-front h3, .card-back h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.card-front p {
+    color: var(--steel-gray);
+    font-size: 0.92rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Estructuración interna de las barras de progreso (Cara Trasera) */
+.skill-progress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+.bar-bg {
+    width: 100%;
+    height: 8px;
+    background-color: #161b22;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+/* Paleta de colores para el relleno de progreso */
+.bar-fill.cyber-green { background-color: var(--terminal-green); }
+.bar-fill.cyber-blue  { background-color: var(--accent-blue); }
+.bar-fill.cyber-gray  { background-color: var(--steel-gray); }
+
+/* Contenedor y diseño de etiquetas de tecnologías (Tags) */
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto; 
+    padding-top: 10px;
+}
+
+.tag {
+    background: #161b22;
+    border: 1px solid var(--border-color);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.74rem;
+    white-space: nowrap;
+}
+
+.card-front.cyber .tag   { color: var(--terminal-green); }
+.card-front.dev .tag     { color: var(--accent-blue); }
+.card-front.systems .tag { color: var(--steel-gray); }
+
+/* ==========================================================================
+ * 3. SECCIÓN PROYECTOS (ESTILOS COMPATIBLES CON INYECCIÓN DE SCRIPT)
+ * ==========================================================================
+ */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.loading-text {
+    color: var(--steel-gray);
+    font-style: italic;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Clases generadas dinámicamente por JS */
+.project-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--terminal-green);
+    padding: 25px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h3 {
+    color: var(--text-main);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: var(--steel-gray);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.project-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.project-link {
+    color: var(--terminal-green);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+ * 4. SECCIONES: EXPERIENCIA, ESTUDIOS Y CERTIFICACIONES
+ * ==========================================================================
+ */
+
+/* --- Sección General de Certificaciones --- */
+.certifications-section {
+    padding: 60px 0;
+    width: 100%;
+}
+
+/* Ajustes específicos de dimensiones para la sección de Certificaciones */
+#certificaciones .skill-card,
+.certifications-section .skill-card {
+    max-width: 420px !important; 
+    width: 100%;
+    height: 380px !important;    
+    margin: 0 auto;
+    perspective: 1000px;         
+}
+
+/* Reutilización y formateo de la vista trasera específica para Certificaciones */
+#certificaciones .card-back {
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #0d1117;
+}
+
+#certificaciones .card-back h3 {
+    color: var(--text-main);
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed var(--border-color);
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+#certificaciones .verify-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#certificaciones .verify-link:hover {
+    color: var(--terminal-green);
+    text-shadow: 0 0 8px rgba(74, 246, 38, 0.5);
+}
+
+#certificaciones .tag-container {
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+/* --- CONTENEDOR DE LA PREVIEW DEL PDF --- */
+.pdf-preview-container {
+    position: relative;
+    max-width: 420px;           
+    width: 100%;
+    height: 240px;              
+    background: #05070a;        
+    border: 1px dashed #00ff66; 
+    border-radius: 6px;
+    margin: 15px auto;          
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Parche específico para la preview dentro de la tarjeta volteada */
+#certificaciones .pdf-preview-container {
+    max-width: 100% !important;
+    height: 180px !important;    
+    margin: 10px 0 !important;
+    pointer-events: auto !important; 
+}
+
+/* Fuerza al objeto PDF a ocupar el espacio correcto sin desbordar */
+.pdf-preview-container object {
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden !important;
+    /* Ajuste para navegadores Chromium: estirar el objeto para empujar el scrollbar gris fuera de la vista */
+    width: 108% !important; 
+    margin-right: -8% !important; 
+    pointer-events: none !important; /* FIX CRUCIAL: Evita que el PDF interfiera con los eventos del mouse */
+}
+
+/* Efecto de iluminación al pasar el mouse por la tarjeta */
+.pdf-preview-container:hover {
+    border-style: solid;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.25);
+    transform: scale(1.01);
+}
+
+/* --- CAPA INTERACTIVA FLOTANTE (HOVER EN PREVIEW PDF) --- */
+.pdf-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.85); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;                 
+    z-index: 10;                /* Se posiciona por encima del PDF para asegurar el click */
+    transition: opacity 0.3s ease;
+}
+
+.pdf-preview-container:hover .pdf-overlay {
+    opacity: 1; 
+}
+
+.pdf-overlay i {
+    font-size: 1.8rem;
+    color: #ff4a4a;             
+    filter: drop-shadow(0 0 5px rgba(255, 74, 74, 0.5));
+}
+
+.pdf-overlay span {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #00ff66;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* --- Historial Cronológico de Experiencia (.experience-timeline) --- */
+.experience-timeline {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+    background: var(--border-color);
+    border-left: 1px dashed rgba(74, 246, 38, 0.3);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 60px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 14px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--terminal-green);
+    box-shadow: 0 0 8px var(--terminal-green);
+    z-index: 2;
+}
+
+.timeline-content {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.05);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--terminal-green);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.timeline-content h3 {
+    color: var(--text-main);
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.timeline-company {
+    color: var(--accent-blue);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.timeline-content p {
+    color: var(--steel-gray);
+    font-size: 0.92rem;
+}
+
+/* --- Rejillas de Formación (.studies-grid / .certifications-grid) --- */
+.studies-grid, .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.education-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 22px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 2px solid var(--steel-gray);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-2px);
+    border-top-color: var(--accent-blue);
+    border-color: rgba(0, 210, 255, 0.3);
+}
+
+.education-card.cert-variant {
+    border-top: 2px solid var(--border-color);
+}
+
+.education-card.cert-variant:hover {
+    border-top-color: var(--terminal-green);
+    border-color: rgba(74, 246, 38, 0.3);
+}
+
+.education-card h3 {
+    color: var(--text-main);
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.education-institution {
+    color: var(--steel-gray);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.education-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.education-date {
+    color: var(--terminal-green);
+    font-weight: bold;
+}
+
+/* Pestañas de Navegación Cisco */
+.tab-btn {
+    background: #0a192f;
+    border: 1px solid #00ff66;
+    color: #00ff66;
+    font-family: monospace;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    flex-grow: 1;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(0, 255, 102, 0.1);
+    box-shadow: 0 0 8px rgba(0, 255, 102, 0.3);
+}
+
+.tab-btn.active {
+    background: #00ff66;
+    color: #0a192f;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+}
+
+/* ==========================================================================
+ * 5. SECCIÓN CONTACTO (FORMULARIO CONSOLA DE ENVÍO)
+ * ==========================================================================
+ */
+.form-wrapper {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.terminal-form {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--terminal-green);
+    font-size: 0.9rem;
+}
+
+.terminal-form input, 
+.terminal-form textarea {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 14px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.terminal-form input:focus, 
+.terminal-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.15);
+}
+
+.terminal-form textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid var(--terminal-green);
+    color: var(--terminal-green);
+    padding: 14px 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--terminal-green);
+    color: var(--bg-primary);
+    box-shadow: 0 0 15px rgba(74, 246, 38, 0.25);
+}
+
+#form-response {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ==========================================================================
+ * PIE DE PÁGINA
+ * ==========================================================================
+ */
+.footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-terminal {
+    margin-top: 10px;
+    color: var(--steel-gray);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+ * RESPONSIVIDAD (MEDIA QUERIES INTEGRADOS)
+ * ==========================================================================
+ */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 10px;
+    }
+    .nav-menu {
+        gap: 15px;
+    }
+    .hero-section {
+        padding-top: 140px;
+    }
+    .console-title {
+        font-size: 1.9rem;
+        min-height: auto;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-terminal {
+        width: 100%;
+    }
+    .hero-socials {
+        gap: 20px;
+    }
+    .skills-grid {
+        padding: 15px;
+    }
+    .terminal-form {
+        padding: 1.5rem;
+    }
+    /* Adaptación móvil para la línea de tiempo */
+    .experience-timeline::before {
+        left: 10px;
+    }
+    .timeline-item {
+        padding-left: 35px;
+    }
+    .timeline-dot {
+        left: 4px;
+    }
+}
+
+/* ==========================================================================
+ * ESTILIZACIÓN EXCLUSIVA DEL BOTÓN DE IDIOMA (#language-toggle)
+ * ==========================================================================
+ */
+#language-toggle.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(74, 246, 38, 0.05); /* Fondo verde terminal sutil */
+    border: 1px solid rgba(74, 246, 38, 0.3);   /* Borde verde translúcido */
+    color: var(--terminal-green);                /* Texto en verde neón */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 36px;
+    align-self: center; /* Alineación vertical en el menú */
+}
+
+/* Efecto interactivo (Hover) - Brillo e inversión de color estilo consola */
+#language-toggle.lang-btn:hover {
+    background-color: var(--terminal-green);
+    color: var(--bg-primary);
+    box-shadow: 0 0 12px rgba(74, 246, 38, 0.4);
+    border-color: var(--terminal-green);
+}
+
+/* Ajuste del ícono de planeta/idioma */
+#language-toggle.lang-btn i {
+    font-size: 0.95rem;
+}
+
+/* Ajuste específico para que en móviles no rompa la estructura de la barra */
+@media (max-width: 768px) {
+    #language-toggle.lang-btn {
+        width: auto;       /* Evita que se estire al 100% como los botones grandes */
+        margin-top: 5px;   /* Separación en el menú desplegado */
+        padding: 5px 16px;
+    }
+}
+
+.shield-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px rgba(74, 246, 38, 0.4)); /* Le da el brillo neón característico */
+    transition: transform 0.3s ease;
+}
+
+.shield-logo:hover .logo-img {
+    transform: scale(1.08);
+}
+
+/* Estilo base y transición suave para el texto SecPort */
+.nav-logo span {
+    transition: all 0.3s ease;
+}
+
+/* Efecto cuando pasas el cursor sobre todo el bloque del logo o el texto */
+.nav-logo:hover .logo-img {
+    transform: scale(1.08); /* Asegura que el monograma también crezca */
+}
+
+.nav-logo:hover span {
+    color: #ffffff; /* Hace que el texto pase a un blanco brillante */
+    text-shadow: 0 0 8px rgba(74, 246, 38, 0.8); /* Le añade el resplandor verde neón */
+}

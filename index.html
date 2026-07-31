@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecPort | Technical Portfolio</title>
+    <!-- Importación de FontAwesome para los íconos (PDF, candados, redes sociales, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Vinculación con tu archivo de estilos corregido -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="grid-bg">
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+  <nav class="navbar">
+    <div class="nav-container">
+        <!-- Agrupamos el monograma y el texto dentro del enlace principal -->
+        <a href="#" class="nav-logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+            <div class="shield-logo" style="margin: 0;">
+                <img src="./jc.svg" alt="Monograma JC" class="logo-img">
+            </div>
+            <span>SecPort</span>
+        </a>
+            <div class="nav-menu">
+                <a href="#sobre-mi" class="nav-link translate" data-key="nav-about" data-es="Sobre Mí" data-en="About Me">About Me</a>
+                <a href="#habilidades" class="nav-link translate" data-key="nav-skills" data-es="Habilidades" data-en="Skills">Skills</a>
+                <a href="#experiencia" class="nav-link translate" data-key="nav-experience" data-es="Experiencia" data-en="Experience">Experience</a>
+                <a href="#educacion" class="nav-link translate" data-key="nav-education" data-es="Educación" data-en="Education">Education</a>
+                <a href="#certificaciones" class="nav-link translate" data-key="nav-certifications" data-es="Certificaciones" data-en="Certifications">Certifications</a>
+                <a href="#proyectos" class="nav-link translate" data-key="nav-projects" data-es="Proyectos" data-en="Projects">Projects</a>
+                <a href="#contacto" class="nav-link translate" data-key="nav-contact" data-es="Contacto" data-en="Contact">Contact</a>
+                <!-- Pon esto en tu archivo HTML, idealmente en la barra de navegación o esquina superior -->
+                <button id="language-toggle" class="lang-btn" aria-label="Cambiar idioma">
+                    <i class="fa-solid fa-language"></i> <span id="lang-label">ES</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. SECCIÓN HERO (CENTRADO ABSOLUTO) -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <!-- Título con efecto Typewriter por JS (o estático) -->
+            <h1 class="console-title">&gt;&gt; <span id="typewriter"></span></h1>
+            <p class="hero-subtitle translate" data-key="hero-subtitle" data-es="Ingeniero de Sistemas especializado en Ciberseguridad." data-en="Systems Engineer specializing in Cybersecurity.">Systems Engineer specializing in Cybersecurity.</p>
+
+            <!-- Botones Principales Corregidos -->
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn-terminal btn-primary translate" data-key="btn-repositories" data-es="<i class='fas fa-code-branch'></i> Consultar Repositorios" data-en="<i class='fas fa-code-branch'></i> Check Repositories">
+                    <i class="fas fa-code-branch"></i> Check Repositories
+                </a>
+                <a href="./CURRICULUM VITAE JC.pdf" class="btn-terminal btn-secondary translate" target="_blank" data-key="btn-resume" data-es="<i class='fas fa-file-pdf'></i> Ver Currículum" data-en="<i class='fas fa-file-pdf'></i> View Resume">
+                    <i class="fas fa-file-pdf"></i> View Resume
+                </a>
+            </div>
+
+            <!-- Enlaces a Redes Sociales Corregidos (Fuera del contenedor de botones principales) -->
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/josé-cruz-it?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://wa.me/584246446569" class="social-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. SECCIÓN SOBRE MÍ -->
+    <section id="sobre-mi" class="section-container">
+        <h2 class="section-title translate" data-key="about-title" data-es="Sobre Mí" data-en="About Me">About Me</h2>
+        <div class="console-box" style="background: rgba(10, 25, 47, 0.4); border: 1px solid #00ff66; padding: 25px; border-radius: 4px; max-width: 1100px; margin: 0 auto;">
+            <p class="translate" data-key="about-content" data-es="<span style='color: #00ff66;'>guest@secport:~$</span> cat about_me.log<br><br>Soy un **Ingeniero de Sistemas** enfocado en el análisis, diagnóstico e implementación de estrategias avanzadas de **Ciberseguridad**. Mi enfoque profesional combina el desarrollo de soluciones luegos, el análisis profundo de datos de tráfico y vulnerabilidades, y la automatización mediante scripting en **Python**.<br><br>Me apasiona desglosar infraestructuras técnicas complejas para fortalecer sus defensas, mitigar riesgos críticos y estructurar sistemas robustos frente a amenazas digitales modernas." data-en="<span style='color: #00ff66;'>guest@secport:~$</span> cat about_me.log<br><br>I am a **Systems Engineer** focused on the analysis, diagnosis, and implementation of advanced **Cybersecurity** strategies. My professional focus combines software solutions development, deep traffic and vulnerability data analysis, and automation via scripting in **Python**.<br><br>I am passionate about breaking down complex technical infrastructures to strengthen their defenses, mitigate critical risks, and build robust systems against modern digital threats." style="color: #8892b0; font-family: 'Courier New', Courier, monospace; line-height: 1.6; font-size: 1.05rem; margin: 0;">
+                <span style="color: #00ff66;">guest@secport:~$</span> cat about_me.log
+                <br><br>
+                I am a **Systems Engineer** focused on the analysis, diagnosis, and implementation of advanced **Cybersecurity** strategies. My professional focus combines software solutions development, deep traffic and vulnerability data analysis, and automation via scripting in **Python**. 
+                <br><br>
+                I am passionate about breaking down complex technical infrastructures to strengthen their defenses, mitigate critical risks, and build robust systems against modern digital threats.
+            </p>
+        </div>
+    </section>
+
+    <!-- 2. SECCIÓN HABILIDADES (CONSOLA DE CAPACIDADES MODULAR) -->
+    <section id="habilidades" class="section-container">
+        <h2 class="section-title translate" data-key="skills-title" data-es="Habilidades Técnicas" data-en="Technical Skills">Technical Skills</h2>
+        <p class="section-subtitle translate" data-key="skills-subtitle" data-es="Áreas de especialización y herramientas principales de mi stack técnico." data-en="Specialization areas and primary tools of my technical stack.">Specialization areas and primary tools of my technical stack.</p>
+
+        <div class="skills-section">
+            <!-- Cabecera simulación de terminal -->
+            <div class="terminal-header">
+                <span class="terminal-circle red"></span>
+                <span class="terminal-circle yellow"></span>
+                <span class="terminal-circle green"></span>
+                <span class="terminal-title">core_capabilities.sh</span>
+            </div>
+
+            <!-- Rejilla de tarjetas de habilidades -->
+            <div class="skills-grid">
+                <!-- Tarjeta de Ciberseguridad -->
+                <div class="skill-card">
+                    <div class="card-inner">
+                        <!-- CARA FRONTAL -->
+                        <div class="card-front cyber">
+                            <div>
+                                <div class="card-icon"><i class="fas fa-terminal"></i></div>
+                                <h3>Cybersecurity</h3>
+                                <p class="translate" data-key="skill-cyber-desc" data-es="Análisis de vulnerabilidades, auditorías de seguridad en entornos de red y fortificación de sistemas operativos." data-en="Vulnerability analysis, security audits in network environments, and operating system hardening.">Vulnerability analysis, security audits in network environments, and operating system hardening.</p>
+                            </div>
+                            <div class="tag-container">
+                                <span class="tag">Pentesting</span>
+                                <span class="tag">Linux</span>
+                                <span class="tag">Wireshark</span>
+                            </div>
+                        </div>
+                        <!-- CARA TRASERA -->
+                        <div class="card-back cyber-border">
+                            <h3 class="translate" data-key="tech-level-1" data-es="Nivel Técnico Core" data-en="Core Tech Level">Core Tech Level</h3>
+                            <div class="skill-progress">
+                                <div class="skill-info"><span>Pentesting</span><span>85%</span></div>
+                                <div class="bar-bg"><div class="bar-fill cyber-green" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-info"><span>Linux</span><span>90%</span></div>
+                                <div class="bar-bg"><div class="bar-fill cyber-green" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-info"><span>Wireshark</span><span>75%</span></div>
+                                <div class="bar-bg"><div class="bar-fill cyber-green" style="width: 75%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Desarrollo Python -->
+                <div class="skill-card">
+                    <div class="card-inner">
+                        <!-- CARA FRONTAL -->
+                        <div class="card-front dev">
+                            <div>
+                                <div class="card-icon"><i class="fab fa-python"></i></div>
+                                <h3 class="translate" data-key="skill-dev-title" data-es="Desarrollo de Software" data-en="Software Development">Software Development</h3>
+                                <p class="translate" data-key="skill-dev-desc" data-es="Construcción de herramientas automatizadas, análisis de datos y creación de interfaces gráficas de escritorio." data-en="Building automated tools, data analysis, and creating desktop graphical user interfaces.">Building automated tools, data analysis, and creating desktop graphical user interfaces.</p>
+                            </div>
+                            <div class="tag-container">
+                                <span class="tag">Python</span>
+                                <span class="tag">PyQt6</span>
+                                <span class="tag">Data Analysis</span>
+                            </div>
+                        </div>
+                        <!-- CARA TRASERA -->
+                        <div class="card-back dev-border">
+                            <h3 class="translate" data-key="tech-level-2" data-es="Nivel Técnico Core" data-en="Core Tech Level">Core Tech Level</h3>
+                            <div class="skill-progress">
+                                <div class="skill-info"><span>Python</span><span>90%</span></div>
+                                <div class="bar-bg"><div class="bar-fill cyber-blue" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-info"><span>PyQt6</span><span>85%</span></div>
+                                <div class="bar-bg"><div class="bar-fill cyber-blue" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-info"><span>Data Analysis</span><span>80%</span></div>
+                                <div class="bar-bg"><div class="bar-fill cyber-blue" style="width: 80%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Ingeniería de Sistemas -->
+                <div class="skill-card">
+                    <div class="card-inner">
+                        <!-- CARA FRONTAL -->
+                        <div class="card-front systems">
+                            <div>
+                                <div class="card-icon"><i class="fas fa-server"></i></div>
+                                <h3 class="translate" data-key="skill-systems-title" data-es="Ingeniería de Sistemas" data-en="Systems Engineering">Systems Engineering</h3>
+                                <p class="translate" data-key="skill-systems-desc" data-es="Administración e infraestructura de servidores, automatización de tareas y gestión de arquitecturas de red asesoradas." data-en="Server administration and infrastructure, task automation, and structured network architecture management.">Server administration and infrastructure, task automation, and structured network architecture management.</p>
+                            </div>
+                            <div class="tag-container">
+                                <span class="tag">Sysadmin</span>
+                                <span class="tag">Scripting</span>
+                                <span class="tag">Networks</span>
+                            </div>
+                        </div>
+                        <!-- CARA TRASERA -->
+                        <div class="card-back systems-border">
+                            <h3 class="translate" data-key="tech-level-3" data-es="Nivel Técnico Core" data-en="Core Tech Level">Core Tech Level</h3>
+                            <div class="skill-progress">
+                                <div class="skill-info"><span>Sysadmin</span><span>85%</span></div>
+                                <div class="bar-bg"><div class="bar-fill cyber-gray" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-info"><span>Scripting</span><span>80%</span></div>
+                                <div class="bar-bg"><div class="bar-fill cyber-gray" style="width: 80%;"></div></div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-info"><span>Networks</span><span>85%</span></div>
+                                <div class="bar-bg"><div class="bar-fill cyber-gray" style="width: 85%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SECCIÓN EXPERIENCIA -->
+    <section id="experiencia" class="section-container">
+        <h2 class="section-title translate" data-key="exp-title" data-es="Experiencia Laboral" data-en="Work Experience">Work Experience</h2>
+        <p class="section-subtitle translate" data-key="exp-subtitle" data-es="Historial de despliegues y roles en entornos tecnológicos." data-en="Deployment history and roles in technological environments.">Deployment history and roles in technological environments.</p>
+        <div class="console-box" style="background: rgba(10, 25, 47, 0.4); border: 1px solid #00ff66; padding: 25px; border-radius: 4px; max-width: 1100px; margin: 0 auto;">
+            <div style="color: #8892b0; font-family: 'Courier New', Courier, monospace; line-height: 1.6;">
+                <span style="color: #00ff66;">guest@secport:~$</span> ./view_experience.sh
+                <br><br>
+                
+                <!-- ROL 1 -->
+                <div style="margin-bottom: 30px; border-left: 2px solid #00ff66; padding-left: 15px;">
+                    <h3 class="translate" data-key="exp-role1-title" data-es="[+] Líder de Tecnología y Operaciones (Gerente)" data-en="[+] Technology and Operations Lead (Manager)" style="color: #ffffff; margin: 0; font-size: 1.15rem;">[+] Technology and Operations Lead (Manager)</h3>
+                    <span style="color: #00bfff; font-size: 0.9rem;">DOCFARMA La Fusta, C.A. | 2024 - 2026</span>
+                    <ul class="translate" data-key="exp-role1-list" data-es="<li>Lideré la implementación de la infraestructura de datos y la gestión tecnológica integral durante la etapa de fundación de la empresa.</li><li>Responsable de la administración de bases de datos, negociación estratégica (IT Procurement) con proveedores tecnológicos y el aprovisionamiento de hardware/software corporativo.</li><li>Administré los perfiles digitales y comerciales del negocio, gestionando la visibilidad en línea y la retroalimentación de los clientes para mejorar el posicionamiento.</li><li>Coordiné el personal operativo y técnico, estableciendo procesos de trabajo para garantizar la scalabilidad y eficiencia de los sistemas desde su etapa inicial.</li>" data-en="<li>Led the implementation of data infrastructure and comprehensive tech management during the company's founding stage.</li><li>Responsible for database administration, strategic negotiation (IT Procurement) with tech vendors, and corporate hardware/software provisioning.</li><li>Managed the digital and commercial profiles of the business, handling online visibility and customer feedback to improve positioning.</li><li>Coordinated operational and technical staff, establishing workflows to ensure system scalability and efficiency from the ground up.</li>" style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.95rem; list-style-type: square;">
+                        <li>Led the implementation of data infrastructure and comprehensive tech management during the company's founding stage.</li>
+                        <li>Responsible for database administration, strategic negotiation (IT Procurement) with tech vendors, and corporate hardware/software provisioning.</li>
+                        <li>Managed the digital and commercial profiles of the business, handling online visibility and customer feedback to improve positioning.</li>
+                        <li>Coordinated operational and technical staff, establishing workflows to ensure system scalability and efficiency from the ground up.</li>
+                    </ul>
+                </div>
+
+                <!-- ROL 2 -->
+                <div style="margin-bottom: 30px; border-left: 2px solid #00ff66; padding-left: 15px;">
+                    <h3 class="translate" data-key="exp-role2-title" data-es="[+] Coordinador de Infraestructura y Operaciones" data-en="[+] Infrastructure and Operations Coordinator" style="color: #ffffff; margin: 0; font-size: 1.15rem;">[+] Infrastructure and Operations Coordinator</h3>
+                    <span style="color: #00bfff; font-size: 0.9rem;">Farmacia DR. GALUE LA FUSTA, C.A. | 2023 - 2024</span>
+                    <ul class="translate" data-key="exp-role2-list" data-es="<li>Supervisé la continuidad operativa de la infraestructura local y sistemas de punto de venta (POS).</li><li>Ejecuté mantenimiento preventivo/correctivo de equipos y lideré al personal en la adopción de herramientas tecnológicas.</li>" data-en="<li>Supervised the operational continuity of local infrastructure and Point of Sale (POS) systems.</li><li>Executed preventive/corrective equipment maintenance and led staff in the adoption of technological tools.</li>" style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.95rem; list-style-type: square;">
+                        <li>Supervised the operational continuity of local infrastructure and Point of Sale (POS) systems.</li>
+                        <li>Executed preventive/corrective equipment maintenance and led staff in the adoption of technological tools.</li>
+                    </ul>
+                </div>
+
+                <!-- ROL 3 -->
+                <div style="margin-bottom: 30px; border-left: 2px solid #00ff66; padding-left: 15px;">
+                    <h3 class="translate" data-key="exp-role3-title" data-es="[+] Analista de Sistemas (Pasante de TI)" data-en="[+] Systems Analyst (IT Intern)" style="color: #ffffff; margin: 0; font-size: 1.15rem;">[+] Systems Analyst (IT Intern)</h3>
+                    <span style="color: #00bfff; font-size: 0.9rem;">Procesamiento Electrónico de Datos, S.A. | 2023 - 2024</span>
+                    <ul class="translate" data-key="exp-role3-list" data-es="<li>Desarrollé un sistema automatizado de gestión de archivos en Python, optimizando el flujo de información interna.</li>" data-en="<li>Developed an automated file management system in Python, optimizing the internal information flow.</li>" style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.95rem; list-style-type: square;">
+                        <li>Developed an automated file management system in Python, optimizing the internal information flow.</li>
+                    </ul>
+                </div>
+
+                <!-- ROL 4 -->
+                <div style="border-left: 2px solid #00ff66; padding-left: 15px;">
+                    <h3 class="translate" data-key="exp-role4-title" data-es="[+] Soporte Operativo" data-en="[+] Operational Support" style="color: #ffffff; margin: 0; font-size: 1.15rem;">[+] Operational Support</h3>
+                    <span style="color: #00bfff; font-size: 0.9rem;">Farmacia DR. GALUE LA FUSTA, C.A. | 2021 - 2023</span>
+                    <ul class="translate" data-key="exp-role4-list" data-es="<li>Soporte en operaciones comerciales y uso de sistemas corporativos de facturación e inventario.</li>" data-en="<li>Support in commercial operations and use of corporate billing and inventory systems.</li>" style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.95rem; list-style-type: square;">
+                        <li>Support in commercial operations and use of corporate billing and inventory systems.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECCIÓN EDUCACIÓN -->
+    <section id="educacion" class="section-container">
+        <h2 class="section-title translate" data-key="edu-title" data-es="Educación" data-en="Education">Education</h2>
+        <p class="section-subtitle translate" data-key="edu-subtitle" data-es="Formación académica y bases fundamentales de ingeniería." data-en="Academic background and fundamental bases of engineering.">Academic background and fundamental bases of engineering.</p>
+        <div class="console-box" style="background: rgba(10, 25, 47, 0.4); border: 1px solid #00ff66; padding: 25px; border-radius: 4px; max-width: 1100px; margin: 0 auto;">
+            <div style="color: #8892b0; font-family: 'Courier New', Courier, monospace; line-height: 1.6;">
+                <span style="color: #00ff66;">guest@secport:~$</span> cat education.db
+                <br><br>
+                
+                <!-- Ingeniero de Sistemas -->
+                <div style="margin-bottom: 25px; border-left: 2px solid #00bfff; padding-left: 15px;">
+                    <h3 class="translate" data-key="edu-degree1-title" data-es="[🎓] Ingeniero de Sistemas" data-en="[🎓] Systems Engineer" style="color: #ffffff; margin: 0; font-size: 1.15rem;">[🎓] Systems Engineer</h3>
+                    <span style="color: #00ff66; font-size: 0.9rem;">Universidad Nacional Experimental Politécnica de la Fuerza Armada | 2019 - 2024</span>
+                    <p class="translate" data-key="edu-degree1-desc" data-es="Diseño de arquitecturas lógicas, análisis de datos y fundamentos aplicados de seguridad informática." data-en="Logic architecture design, data analysis, and applied fundamentals of computer security." style="margin: 5px 0 0 0; font-size: 0.95rem;">Logic architecture design, data analysis, and applied fundamentals of computer security.</p>
+                </div>
+
+                <!-- Ingeniería en Informática -->
+                <div style="margin-bottom: 25px; border-left: 2px solid #00bfff; padding-left: 15px;">
+                    <h3 class="translate" data-key="edu-degree2-title" data-es="[🎓] Ingeniería en Informática" data-en="[🎓] Computer Science Engineering" style="color: #ffffff; margin: 0; font-size: 1.15rem;">[🎓] Computer Science Engineering</h3>
+                    <span style="color: #00ff66; font-size: 0.9rem;">Universidad Rafael Belloso Chacín | 2021 - Actualidad</span>
+                    <p class="translate" data-key="edu-degree2-desc" data-es="Estudios en desarrollo de software, algoritmos avanzados e infraestructura digital." data-en="Studies in software development, advanced algorithms, and digital infrastructure." style="margin: 5px 0 0 0; font-size: 0.95rem;">Studies in software development, advanced algorithms, and digital infrastructure.</p>
+                </div>
+
+                <!-- Bachiller en Ciencias -->
+                <div style="border-left: 2px solid #00bfff; padding-left: 15px;">
+                    <h3 class="translate" data-key="edu-degree3-title" data-es="[🎓] Bachiller en Ciencias" data-en="[🎓] High School Bachelor of Science" style="color: #ffffff; margin: 0; font-size: 1.15rem;">[🎓] High School Bachelor of Science</h3>
+                    <span style="color: #00ff66; font-size: 0.9rem;">U.E. Nuestro Libertador | 2013 - 2018</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECCIÓN CERTIFICACIONES -->
+    <section id="certificaciones" class="section-container">
+        <h2 class="section-title translate" data-key="cert-title" data-es="Certificaciones & Awards" data-en="Certifications & Awards">Certifications & Awards</h2>
+        <p class="section-subtitle translate" data-key="cert-subtitle" data-es="Credenciales oficiales y validaciones de mi formación continua." data-en="Official credentials and validations of my continuous learning journey.">Official credentials and validations of my continuous learning journey.</p>
+
+        <div class="skills-section">
+            <div class="terminal-header">
+                <span class="terminal-circle red"></span>
+                <span class="terminal-circle yellow"></span>
+                <span class="terminal-circle green"></span>
+                <span class="terminal-title">my_certifications.sh</span>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Bloque 1: Linux -->
+                <div class="skill-card">
+                    <div class="card-inner">
+                        <div class="card-front cyber">
+                            <div>
+                                <div class="card-icon"><i class="fab fa-linux"></i></div>
+                                <h3>Linux Essentials</h3>
+                                <p class="translate" data-key="cert-linux-desc" data-es="Fundamentos del sistema operativo Linux, administración de líneas de comandos, scripts básicos y conceptos de código abierto." data-en="Fundamentals of the Linux operating system, command-line administration, basic scripting, and open-source concepts.">Fundamentals of the Linux operating system, command-line administration, basic scripting, and open-source concepts.</p>
+                            </div>
+                            <div class="tag-container">
+                                <span class="tag">Linux</span>
+                                <span class="tag">Cisco / NDG</span>
+                            </div>
+                        </div>
+                        <div class="card-back cyber-border">
+                            <h3 class="translate" data-key="preview-label-1" data-es="Vista Previa" data-en="Preview">Preview</h3>
+                            <div class="pdf-preview-container">
+                                <object data="CERTIFICACIONES/LINUX/Partner-_NDG_Linux_Unhatched_certificate_josecruz250901-gmail-com_656fe845-17a9-4bb1-85ef-4243e29bc012.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" width="100%" height="100%">
+                                    <div class="pdf-mockup" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                                        <i class="fas fa-file-pdf" style="font-size: 2rem; color: #ff0055;"></i>
+                                        <span class="translate" data-key="click-view-1" data-es="Click para ver certificado" data-en="Click to view certificate" style="font-size: 0.8rem; margin-top: 8px;">Click to view certificate</span>
+                                    </div>
+                                </object>
+                                <a href="CERTIFICACIONES/LINUX/Partner-_NDG_Linux_Unhatched_certificate_josecruz250901-gmail-com_656fe845-17a9-4bb1-85ef-4243e29bc012.pdf" target="_blank" class="pdf-overlay" title="Click para abrir PDF original">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="translate" data-key="open-pdf-1" data-es="ABRIR PDF" data-en="OPEN PDF">OPEN PDF</span>
+                                </a>
+                            </div>
+                            <div class="skill-progress" style="margin-top: auto; width: 100%;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                    <span class="translate" data-key="verified-label-1" data-es="VERIFICADO" data-en="VERIFIED" style="color: #00ff66; font-family: monospace;">VERIFIED</span>
+                                    <span class="translate" data-key="year-label-1" data-es="AÑO: 2023" data-en="YEAR: 2023" style="color: #8892b0; font-size: 0.8rem; font-family: monospace;">YEAR: 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: Cybersecurity -->
+                <div class="skill-card">
+                    <div class="card-inner">
+                        <div class="card-front cyber">
+                            <div>
+                                <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                                <h3>Introduction to Cybersecurity</h3>
+                                <p class="translate" data-key="cert-cyber-desc" data-es="Principios de seguridad de la información, protección de datos, análisis de vulnerabilidades y mitigación de amenazas cibernéticas digitales." data-en="Information security principles, data protection, vulnerability analysis, and digital cyber threat mitigation.">Information security principles, data protection, vulnerability analysis, and digital cyber threat mitigation.</p>
+                            </div>
+                            <div class="tag-container">
+                                <span class="tag">Cybersecurity</span>
+                                <span class="tag">NetAcad</span>
+                            </div>
+                        </div>
+                        <div class="card-back cyber-border">
+                            <h3 class="translate" data-key="preview-label-2" data-es="Vista Previa" data-en="Preview">Preview</h3>
+                            <div class="pdf-preview-container">
+                                <object data="./CERTIFICACIONES/CIBERSECURITY/Introduction_to_Cybersecurity_certificate_josecruz250901-gmail-com_cb15a62f-43ab-476d-8e54-0d4a2f5da2b2.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" width="100%" height="100%">
+                                    <div class="pdf-mockup" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                                        <i class="fas fa-file-pdf" style="font-size: 2rem; color: #ff0055;"></i>
+                                        <span class="translate" data-key="click-view-2" data-es="Click para ver certificado" data-en="Click to view certificate" style="font-size: 0.8rem; margin-top: 8px;">Click to view certificate</span>
+                                    </div>
+                                </object>
+                                <a href="./CERTIFICACIONES/CIBERSECURITY/Introduction_to_Cybersecurity_certificate_josecruz250901-gmail-com_cb15a62f-43ab-476d-8e54-0d4a2f5da2b2.pdf" target="_blank" class="pdf-overlay" title="Click para abrir PDF original">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="translate" data-key="open-pdf-2" data-es="ABRIR PDF" data-en="OPEN PDF">OPEN PDF</span>
+                                </a>
+                            </div>
+                            <div class="skill-progress" style="margin-top: auto; width: 100%;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                    <span class="translate" data-key="verified-label-2" data-es="VERIFICADO" data-en="VERIFIED" style="color: #00ff66; font-family: monospace;">VERIFIED</span>
+                                    <span class="translate" data-key="year-label-2" data-es="AÑO: 2023" data-en="YEAR: 2023" style="color: #8892b0; font-size: 0.8rem; font-family: monospace;">YEAR: 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 3: Introduction to IoT -->
+                <div class="skill-card">
+                    <div class="card-inner">
+                        <div class="card-front cyber">
+                            <div>
+                                <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                                <h3>Introduction to IoT</h3>
+                                <p class="translate" data-key="cert-iot-desc" data-es="Conceptos y conexiones del Internet de las Cosas, transformación digital, sensores, automatización y análisis de datos en la nube." data-en="Internet of Things concepts and connections, digital transformation, sensors, automation, and cloud data analysis.">Internet of Things concepts and connections, digital transformation, sensors, automation, and cloud data analysis.</p>
+                            </div>
+                            <div class="tag-container">
+                                <span class="tag">IoT</span>
+                                <span class="tag">Cisco</span>
+                            </div>
+                        </div>
+                        <div class="card-back cyber-border">
+                            <h3 class="translate" data-key="preview-label-3" data-es="Vista Previa" data-en="Preview">Preview</h3>
+                            <div class="pdf-preview-container">
+                                <object data="./CERTIFICACIONES/IOT/Introduction_to_IoT_certificate_josecruz250901-gmail-com_7a73bbbd-66bf-48f7-8510-ee93d918c76d.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" width="100%" height="100%">
+                                    <div class="pdf-mockup" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                                        <i class="fas fa-file-pdf" style="font-size: 2rem; color: #ff0055;"></i>
+                                        <span class="translate" data-key="click-view-3" data-es="Click para ver certificado" data-en="Click to view certificate" style="font-size: 0.8rem; margin-top: 8px;">Click to view certificate</span>
+                                    </div>
+                                </object>
+                                <a href="./CERTIFICACIONES/IOT/Introduction_to_IoT_certificate_josecruz250901-gmail-com_7a73bbbd-66bf-48f7-8510-ee93d918c76d.pdf" target="_blank" class="pdf-overlay" title="Click para abrir PDF original">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="translate" data-key="open-pdf-3" data-es="ABRIR PDF" data-en="OPEN PDF">OPEN PDF</span>
+                                </a>
+                            </div>
+                            <div class="skill-progress" style="margin-top: auto; width: 100%;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                    <span class="translate" data-key="verified-label-3" data-es="VERIFICADO" data-en="VERIFIED" style="color: #00ff66; font-family: monospace;">VERIFIED</span>
+                                    <span class="translate" data-key="year-label-3" data-es="AÑO: 2023" data-en="YEAR: 2023" style="color: #8892b0; font-size: 0.8rem; font-family: monospace;">YEAR: 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 4: Cisco Certifications (Multi-Cert) -->
+                <div class="skill-card">
+                    <div class="card-inner">
+                        <div class="card-front cyber">
+                            <div>
+                                <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                                <h3>Cisco Certifications</h3>
+                                <p class="translate" data-key="cert-cisco-desc" data-es="Especialización en redes, automatización, Internet de las Cosas y bases sólidas de conectividad digital bajo el ecosistema de Cisco." data-en="Specialization in networks, automation, Internet of Things, and strong digital connectivity foundations under the Cisco ecosystem.">Specialization in networks, automation, Internet of Things, and strong digital connectivity foundations under the Cisco ecosystem.</p>
+                            </div>
+                            <div class="tag-container">
+                                <span class="tag">Cisco Networking</span>
+                                <span class="tag">IoT</span>
+                                <span class="tag">Packet Tracer</span>
+                            </div>
+                        </div>
+                        <div class="card-back cyber-border">
+                            <h3 style="margin-bottom: 5px;">Cisco Credentials</h3>
+                            <div class="cert-tabs" style="display: flex; gap: 5px; margin-bottom: 10px; width: 100%;">
+                                <button class="tab-btn active" data-target="cert-iot">IoT</button>
+                                <button class="tab-btn" data-target="cert-net">Networking</button>
+                                <button class="tab-btn" data-target="cert-cyber">Packet Tracer</button>
+                            </div>
+                            <div class="cert-content-container" style="position: relative; width: 100%; flex-grow: 1; height: 180px;">
+                                <div id="cert-iot" class="cert-tab-content active" style="height: 100%;">
+                                    <div class="pdf-preview-container">
+                                        <object data="./CERTIFICACIONES/CISCO/Exploring_IoT_with_Cisco_Packet_Tracer_certificate_josecruz250901-gmail-com_76eb7f69-9b3e-443b-aeed-7b369d821108.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" width="100%" height="100%">
+                                            <div class="pdf-mockup" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                                                <i class="fas fa-file-pdf" style="font-size: 2rem; color: #ff0055;"></i>
+                                                <span class="translate" data-key="click-view-iot" data-es="Click para ver IoT" data-en="Click to view IoT" style="font-size: 0.8rem; margin-top: 8px;">Click to view IoT</span>
+                                            </div>
+                                        </object>
+                                        <a href="./CERTIFICACIONES/CISCO/Exploring_IoT_with_Cisco_Packet_Tracer_certificate_josecruz250901-gmail-com_76eb7f69-9b3e-443b-aeed-7b369d821108.pdf" target="_blank" class="pdf-overlay">
+                                            <i class="fas fa-file-pdf"></i><span class="translate" data-key="open-pdf-iot" data-es="ABRIR PDF IoT" data-en="OPEN IoT PDF">OPEN IoT PDF</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="cert-net" class="cert-tab-content" style="display: none; height: 100%;">
+                                    <div class="pdf-preview-container">
+                                        <object data="./CERTIFICACIONES/CISCO/Exploring_Networking_with_Cisco_Packet_Tracer_certificate_josecruz250901-gmail-com_7b08f60f-e4b2-4921-9531-41e694566692.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" width="100%" height="100%">
+                                            <div class="pdf-mockup" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                                                <i class="fas fa-file-pdf" style="font-size: 2rem; color: #ff0055;"></i>
+                                                <span class="translate" data-key="click-view-net" data-es="Click para ver Networking" data-en="Click to view Networking" style="font-size: 0.8rem; margin-top: 8px;">Click to view Networking</span>
+                                            </div>
+                                        </object>
+                                        <a href="./CERTIFICACIONES/CISCO/Exploring_Networking_with_Cisco_Packet_Tracer_certificate_josecruz250901-gmail-com_7b08f60f-e4b2-4921-9531-41e694566692.pdf" target="_blank" class="pdf-overlay">
+                                            <i class="fas fa-file-pdf"></i><span class="translate" data-key="open-pdf-net" data-es="ABRIR PDF NET" data-en="OPEN NET PDF">OPEN NET PDF</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="cert-cyber" class="cert-tab-content" style="display: none; height: 100%;">
+                                    <div class="pdf-preview-container">
+                                        <object data="./CERTIFICACIONES/CISCO/Getting_Started_with_Cisco_Packet_Tracer_certificate_josecruz250901-gmail-com_c1a77418-7a14-4c6a-9ec8-1b7edd0a1dbd.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" width="100%" height="100%">
+                                            <div class="pdf-mockup" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                                                <i class="fas fa-file-pdf" style="font-size: 2rem; color: #ff0055;"></i>
+                                                <span class="translate" data-key="click-view-tracer" data-es="Click para ver Cyber" data-en="Click to view Cyber" style="font-size: 0.8rem; margin-top: 8px;">Click to view Cyber</span>
+                                            </div>
+                                        </object>
+                                        <a href="./CERTIFICACIONES/CISCO/Getting_Started_with_Cisco_Packet_Tracer_certificate_josecruz250901-gmail-com_c1a77418-7a14-4c6a-9ec8-1b7edd0a1dbd.pdf" target="_blank" class="pdf-overlay">
+                                            <i class="fas fa-file-pdf"></i><span class="translate" data-key="open-pdf-tracer" data-es="ABRIR PDF TRACER" data-en="OPEN TRACER PDF">OPEN TRACER PDF</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-progress" style="margin-top: auto; width: 100%; pt: 5px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                    <span class="translate" data-key="cert-count-label" data-es="3 CERTIFICADOS" data-en="3 CERTIFICATES" style="color: #00ff66; font-family: monospace;">3 CERTIFICATES</span>
+                                    <span style="color: #8892b0; font-size: 0.8rem; font-family: monospace;">CISCO NETACAD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SECCIÓN PROYECTOS -->
+    <section id="proyectos" class="section-container">
+        <h2 class="section-title translate" data-key="projects-header" data-es="Proyectos Destacados" data-en="Featured Projects" style="max-width: 1100px; margin: 100px auto 0 auto; padding: 0 20px;">Featured Projects</h2>
+        <section id="github-projects" class="section-container" style="padding-top: 40px;">
+            <div class="projects-grid" id="projects-container">
+                <div class="loading-text translate" data-key="github-loading" data-es="[ ] Cargando logs de repositorios activos desde GitHub..." data-en="[ ] Loading active repository logs from GitHub...">[ ] Loading active repository logs from GitHub...</div>
+            </div>
+        </section>
+    </section>
+    
+    <!-- 7. SECCIÓN CONTACTO -->
+    <section id="contacto" class="section-container">
+        <h2 class="section-title translate" data-key="contact-header" data-es="Iniciar Conexión" data-en="Establish Connection">Establish Connection</h2>
+        <div class="form-wrapper">
+            <form class="terminal-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">guest@secport:~# name.str</label>
+                    <input type="text" id="name" name="name" placeholder="Your name or company" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">guest@secport:~# email.src</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">guest@secport:~# payload.msg</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message or project proposal..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit translate" data-key="form-submit-btn" data-es="<i class='fas fa-paper-plane'></i> Enviar Mensaje" data-en="<i class='fas fa-paper-plane'></i> Send Message">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+                <div id="form-response" class="hidden"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <p>&copy; 2026 SecPort. All rights reserved.</p>
+        <p class="footer-terminal">STATUS: SECURE // PORT: 443 // USER: ADMIN</p>
+    </footer>
+
+    <!-- Vinculación única de la lógica JavaScript -->
+    <script src="app.js"></script>
+    <!-- SDK de EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "c_pyZNGoH8obIwPoQ", // Reemplaza aquí con tu Public Key de EmailJS
+      });
+   })();
+</script>
+</body>
+</html>
